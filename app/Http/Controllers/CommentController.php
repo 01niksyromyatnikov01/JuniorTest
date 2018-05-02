@@ -59,9 +59,9 @@ class CommentController extends Controller
     public function getAll($id)
     {
         $result =  $this->comments->forAll($id);
-        if(!empty($result->id))
+        if(!empty($result[0]->id))
             return $result;
-        else return response()->json(['error'=> 1,'message' => 'was not found']);
+        else return response()->json(['result'=> 1,'message' => 'was not found']);
     }
 
     /** API STARTS */
